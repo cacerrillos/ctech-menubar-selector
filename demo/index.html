@@ -11,7 +11,12 @@
 <dom-module id="ctech-menubar-selector-demo">
 
 <template>
-	<ctech-menubar-selector id="demo" default-text="Swag" raised selected="{{selected}}"></ctech-menubar-selector><br>
+	<style>
+	:host {
+		--ctech-tab-color: red;
+	}
+	</style>
+	<ctech-menubar-selector id="demo" default-text="Swag" selected="{{selected}}" scrollable no-bar></ctech-menubar-selector><br>
 	Selected: <div>[[selected.id]]</div> <div>[[selected.name]]</div>
 	<button on-click="_doExternalSelect">External Select</button>
 	<button on-click="_doExternalSelectNone">Select None</button>

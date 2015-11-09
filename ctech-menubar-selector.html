@@ -3,15 +3,19 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../ctech-selector-behavior/ctech-selector-behavior.html">
-<style is="custom-style">
-	paper-tab {
-		--paper-tab-ink: var(--ctech-menubar-selector-tab-ink-color, var(--paper-grey-300));
-	}
-	paper-tab.iron-selected {
-		color: var(--ctech-menubar-selector-selected-color, var(--default-primary-color));
-	}
-</style>
 <template>
+	<style>
+		:host {
+			--paper-tab-content: {
+				color: var(--ctech-tab-color, #2196f3);
+			};
+			--paper-tab-content-unselected: {
+				color: var(--ctech-tab-color-unselected, #000000);
+			};
+			--paper-tab-ink: var(--ctech-tab-ink-color, #e0e0e0);
+		}
+		
+	</style>
 	<paper-tabs no-bar="[[noBar]]" scrollable="[[scrollable]]" class="ctech-selector">
 		<template is="dom-repeat" items="{{itemsAsArray}}" as="item"><!-- sort="{{houseSort(housedata)}}">-->
 			<paper-tab class="ctech-selector-item">[[_itemText(item)]]</paper-tab>
@@ -29,15 +33,6 @@ Polymer({
 		noBar: {
 			type: Boolean,
 			value: false
-		},
-		raised: Boolean,
-		selectedColor: {
-			type: String,
-			value: "#2196F3"
-		},
-		defaultColor: {
-			type: String,
-			value: "#212121"
 		}
 	},
 	behaviors: [
