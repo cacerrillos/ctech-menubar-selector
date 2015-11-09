@@ -1,0 +1,24 @@
+{
+  "name": "ctech-menubar-selector",
+  "authors": [
+    "Carlos Cerrillos <carlos@cerrillostech.com>"
+  ],
+  "description": "Create a menubar that allows selection on objects",
+  "main": "ctech-menubar-selector.html",
+  "moduleType": [],
+  "license": "Closed Source",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1",
+    "ctech-selector-behavior": "~1",
+    "paper-tabs": "PolymerElements/paper-tabs#~1",
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+	<link rel="import" href="../ctech-menubar-selector.html">
+</head>
+<body>
+	<ctech-menubar-selector-demo></ctech-menubar-selector-demo>
+</body>
+</html>
+<dom-module id="ctech-menubar-selector-demo">
+
+<template>
+	<ctech-menubar-selector id="demo" default-text="Swag" raised selected="{{selected}}"></ctech-menubar-selector><br>
+	Selected: <div>[[selected.id]]</div> <div>[[selected.name]]</div>
+	<button on-click="_doExternalSelect">External Select</button>
+	<button on-click="_doExternalSelectNone">Select None</button>
+	<button on-click="_doItemChange">Change Items</button>
+	<button on-click="_doHouseData">house Data</button>
+</template>
+
+<script>
+	Polymer({
+		is: 'ctech-menubar-selector-demo',
+		properties: {
+			selected: {
+				type: Object
+			}
+		},
+		_doExternalSelect: function() {
+			this.$.demo.select('idTwo');
+		},
+		_doExternalSelectNone: function() {
+			this.$.demo.select();
+		},
+		_doItemChange: function() {
+			var data = [
+				{ id: 'abcd', name: 'UNO BUNO' },
+				{ id: 'edfg', name: 'Lovers On The Sun' },
+			];
+			this.$.demo.items = data;
+		},
+		_doHouseData: function() {
+			var data = { 3: { version: 0, id: 3, name: "East" }, 1: { version: 0, id: 1, name: "North" }, 6: { version: 0, id: 6, name: "Other" }, 5: { version: 0, id: 5, name: "South" }, 4: { version: 0, id: 4, name: "West" } };
+			this.$.demo.items = data;
+		},
+		ready: function() {
+			var data = [
+				{ id: 'idOne', name: 'nameOfIdOne' },
+				{ id: 'idTwo', name: 'nameOfId2' },
+			];
+			this.$.demo.items = data;
+		}
+	});
+</script>
+</dom-module>

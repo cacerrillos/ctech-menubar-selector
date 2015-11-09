@@ -1,0 +1,51 @@
+<!doctype html>
+<dom-module id="ctech-menubar-selector">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
+<link rel="import" href="../ctech-selector-behavior/ctech-selector-behavior.html">
+<style is="custom-style">
+	paper-tab {
+		--paper-tab-ink: var(--ctech-menubar-selector-tab-ink-color, var(--paper-grey-300));
+	}
+	paper-tab.iron-selected {
+		color: var(--ctech-menubar-selector-selected-color, var(--default-primary-color));
+	}
+</style>
+<template>
+	<paper-tabs no-bar="[[noBar]]" scrollable="[[scrollable]]" class="ctech-selector">
+		<template is="dom-repeat" items="{{itemsAsArray}}" as="item"><!-- sort="{{houseSort(housedata)}}">-->
+			<paper-tab class="ctech-selector-item">[[_itemText(item)]]</paper-tab>
+		</template>
+	</paper-tabs>
+</template>
+<script>
+Polymer({
+	is: "ctech-menubar-selector",
+	properties: {
+		scrollable: {
+			type: Boolean,
+			value: false
+		},
+		noBar: {
+			type: Boolean,
+			value: false
+		},
+		raised: Boolean,
+		selectedColor: {
+			type: String,
+			value: "#2196F3"
+		},
+		defaultColor: {
+			type: String,
+			value: "#212121"
+		}
+	},
+	behaviors: [
+		CTechSelectorBehavior
+	],
+	ready: function() {
+
+	}
+});
+</script>
+</dom-module>
