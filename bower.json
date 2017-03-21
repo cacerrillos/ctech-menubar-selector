@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "polymer": "~1",
-    "ctech-selector-behavior": "~1",
+    "ctech-selector-behavior": "https://github.com/cacerrillos/ctech-selector-behavior.git#~1",
     "paper-tabs": "PolymerElements/paper-tabs#~1"
   }
 }
